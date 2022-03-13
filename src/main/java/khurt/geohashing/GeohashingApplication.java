@@ -26,12 +26,12 @@ public class GeohashingApplication {
 	public String hello(){
 		return "Hello";
 	}
-
+/*
 	@Autowired
 	UserRepository UserRepository;
 	@GetMapping("/users")
 	public String listAll(Model model){
 		List<User> listUsers = UserRepository.findAll();
 		return gson.toJson(listUsers);
-	}
+	}*/
 }
