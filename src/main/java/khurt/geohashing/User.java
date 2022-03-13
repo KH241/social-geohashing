@@ -1,4 +1,4 @@
-/*package khurt.geohashing;
+package khurt.geohashing;
 
 import javax.persistence.*;
 
@@ -19,4 +19,3 @@ public class User {
     @Column(name = "location_y")
     public float pos_y;
 }
-*/
