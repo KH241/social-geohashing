@@ -1,6 +1,9 @@
 package khurt.geohashing.user;
 
+import khurt.geohashing.hashpost.HashPost;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -17,6 +20,9 @@ public class User {
 
     @Column(name = "location_y")
     private double pos_y;
+
+    @OneToMany(mappedBy = "user")
+    private List<HashPost> posts;
 
     public User(){
 

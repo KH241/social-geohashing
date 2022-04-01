@@ -1,7 +1,10 @@
 package khurt.geohashing.geohash;
 
+import khurt.geohashing.hashpost.HashPost;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Table(name = "geohashes")
@@ -18,6 +21,9 @@ public class Geohash {
 
     @Column(name = "date", columnDefinition = "DATE")
     private LocalDate date;
+
+    @OneToMany(mappedBy = "geohash")
+    private List<HashPost> posts;
 
     public Geohash(){
 

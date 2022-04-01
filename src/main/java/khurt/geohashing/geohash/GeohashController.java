@@ -1,5 +1,6 @@
 package khurt.geohashing.geohash;
 
+import khurt.geohashing.ApiPaths;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +12,7 @@ public class GeohashController {
     @Autowired
     GeohashRepository repository;
 
-    @GetMapping("/geohash/{datestring}/{pos_x}/{pos_y}")
+    @GetMapping(ApiPaths.GEOHASH + "/{datestring}/{pos_x}/{pos_y}")
     public Geohash getGeoHash(@PathVariable String datestring, @PathVariable int pos_x, @PathVariable int pos_y) {
         LocalDate date = LocalDate.parse(datestring);
         Geohash hash = repository.find(date, pos_x, pos_y);
@@ -24,7 +25,7 @@ public class GeohashController {
     }
 
     //TODO remove
-    @GetMapping("/geohash")
+    @GetMapping(ApiPaths.GEOHASH)
     public List<Geohash> getAll() {
         return repository.findAll();
     }
