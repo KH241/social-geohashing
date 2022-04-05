@@ -1,4 +1,4 @@
-package khurt.geohashing.images;
+package khurt.geohashing.hashpost;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -25,13 +25,9 @@ public class StorageService {
        }
     }
 
-    public void store(MultipartFile file){
-        try {
-            if (file.isEmpty()) { return; }
-            Files.copy(file.getInputStream(), this.root.resolve(file.getOriginalFilename()));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void store(MultipartFile file, String name) throws IOException {
+        if (file.isEmpty()) { return; }
+        Files.copy(file.getInputStream(), this.root.resolve(name));
     }
 
     private Path load(String filename) {

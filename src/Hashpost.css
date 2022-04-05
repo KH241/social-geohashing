@@ -1,0 +1,55 @@
+:root{
+    --spacing: max(2.5vw, 20px);
+}
+
+.HashPost{
+    display: grid;
+    grid-template-areas: 
+        "image image image"
+        "pos date user"
+    ;
+
+    grid-template-columns: 30% 30% 30%;
+    width: 100%;
+
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+
+    background-color: grey;
+}
+
+.HashPostImage{
+    grid-area: image;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    padding: 5%;
+    padding-bottom: 0;
+}
+
+.HashPostPos{
+    grid-area: pos;
+    font-size: 2rem;
+    justify-self: start;
+    padding-bottom: var(--spacing);
+    padding-top: calc(var(--spacing) / 2);
+    padding-left: calc(var(--spacing) / 2);
+}
+
+.HashPostDate{
+    grid-area: date;
+    font-size: 2rem;
+    padding-bottom: var(--spacing);
+    padding-top: calc(var(--spacing) / 2);
+}
+
+.HashPostUser{
+    grid-area: user;
+    justify-self: end;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-bottom: var(--spacing);
+    padding-top: calc(var(--spacing) / 2);
+    padding-right: calc(var(--spacing) / 2);
+}
