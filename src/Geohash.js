@@ -31,8 +31,8 @@ function Geohash(props) {
     const hash = props.hash;
     return (
         <form className='Geohash'>
-            <div className='lat'>{"Lat: " + hash.pos_x.toFixed(3)}</div> 
-            <div className='long'>{"Long: " + hash.pos_y.toFixed(3)}</div>
+            <div className='lat'>{"Lat: " + hash.pos_x}</div> 
+            <div className='long'>{"Long: " + hash.pos_y}</div>
             <input disabled={props.user == -1} className='imageUpload' id="upload" type="file" accept="image/png" onChange={(e) => {setImage(e.target.files[0]); e.target.value = null; }}/>
             <label for="upload" className='imageContainer'>
                 {image && props.user > 0 && <img className='image' src={URL.createObjectURL(image)}/>}
