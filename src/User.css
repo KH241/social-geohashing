@@ -1,0 +1,83 @@
+.User{
+
+    margin-bottom: 15vw;
+    margin-right: 15vw;
+
+    display: grid;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+    grid-template-areas: 
+        "name name name"
+        "lat lat lat"
+        "long long long"
+        "left middle right"
+    ;
+
+    grid-template-columns: 30% 30% 30%;
+
+    grid-template-rows: 20% 20% 20% 25% ;
+
+    background-color: #424242;
+    color: #b9bbbe;
+
+    border-radius: 25px;
+
+    height: 20vw;
+    min-width: 250px;
+    min-height: 250px;
+    width: 20vw;
+}
+
+
+#name{
+    grid-area: name;
+}
+
+#latInput{
+    grid-area: lat;
+}
+
+#longInput{
+    grid-area: long;
+}
+
+.button{
+    background-color: #36393f;
+    color: #b9bbbe;
+    width: 90%;
+    height: 80%;
+    border: none;
+    border-radius: 7.5px;
+    text-align: center;
+}
+.button:hover{
+    cursor: pointer;
+}
+
+#create{
+    grid-area: left;
+}
+
+#login{
+    grid-area: right;
+}
+
+#edit{
+    grid-area: left;
+}
+
+#save{
+    grid-area: left;
+}
+
+#delete{
+    grid-area: middle;
+}
+
+#logout{
+    grid-area: right;
+}

@@ -80,19 +80,17 @@ function User(props) {
     }
 
     return (
-        <div className='User'>
-            <form>
-                <input type="text" value={name} onChange={e => setName(e.target.value)} disabled={!edit && !register}/>
-                <input type="number" step="0.001" value={pos_x} onChange={e => setPosX(e.target.value)} disabled={!edit && !register}/>
-                <input type="number" step="0.001" value={pos_y} onChange={e => setPosY(e.target.value)} disabled={!edit && !register}/>
-                {!register && <button type="button" onClick={() => setEdit(true)} disabled={edit}>Edit</button>}
-                {!register && <button type="button" onClick={() => deleteUser()}>Delete</button>}
-                {!register && <button type="button" onClick={() => patchUser()} disabled={!edit}>Save</button>}
-                {register && <button type="button" onClick={() => createUser()}>Register</button>}
-                {register && <button type="button" onClick={() => login()}>Login</button>}
-                {!register && <button type="button" onClick={() => logout()}>Logout</button>}
-            </form>
-        </div>
+        <form className='User'>
+            <input className="button" id="name" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} disabled={!edit && !register}/>
+            <input className="button" id="latInput" type="number" placeholder="Latitude" step="0.001" value={pos_x} onChange={e => setPosX(e.target.value)} disabled={!edit && !register}/>
+            <input className="button" id="longInput" type="number" placeholder="Longitude" step="0.001" value={pos_y} onChange={e => setPosY(e.target.value)} disabled={!edit && !register}/>
+            {!register && !edit && <button className="button" id="edit" type="button" onClick={() => setEdit(true)}>Edit</button>}
+            {!register && <button className="button" id="delete" type="button" onClick={() => deleteUser()}>Delete</button>}
+            {!register && edit && <button className="button" id="save" type="button" onClick={() => patchUser()}>Save</button>}
+            {register && <button className="button" id="create" type="button" onClick={() => createUser()}>Register</button>}
+            {register && <button className="button" id="login" type="button" onClick={() => login()}>Login</button>}
+            {!register && <button className="button" id="logout" type="button" onClick={() => logout()}>Logout</button>}
+        </form>
     );
 }
 

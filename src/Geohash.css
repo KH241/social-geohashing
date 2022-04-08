@@ -50,6 +50,10 @@
     box-sizing: border-box;
     border-radius: 7.5px;
     padding: 7.5px;
+    background-color: #36393f;
+    color: #b9bbbe;
+    resize: none;
+    align-self: center;
 }
 
 .post{
@@ -57,6 +61,11 @@
     width: 100%;
     border-radius: 7.5px;
     border: none;
+    background-color: #36393f;
+    color: #b9bbbe;
+}
+.post:hover{
+    cursor: pointer;
 }
 
 #upload{
