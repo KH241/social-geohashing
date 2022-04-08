@@ -3,17 +3,34 @@
     grid-template-areas: 
         "posts hash"
         "posts user"
+        "posts ."
     ;
 
-    overflow-x: hidden;
-    overflow-y: hidden;
+    grid-template-rows: max(25vw, 450px) 20vw;
+    grid-template-columns: 60% 30%;
 
-    column-gap: 5vw;
+    row-gap: max(25px, 2.5vw);
+    padding: 2.5%;
 
-    height: 100vh;
-    width: 100vw;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    justify-items: center;
 
     background-color: #2F3136 ;
+}
+
+@media screen and (max-width: 1250px){
+    .App{
+        grid-template-areas: 
+            "hash"
+            "user"
+            "posts"
+        ;
+
+        grid-template-rows: auto;
+        grid-template-columns: 90%;
+    }
 }
 
 .ContainerHashPost{
@@ -24,14 +41,20 @@
     flex-direction: column;
     gap: 2.5vw;
 
+    width: 90%;
     max-width: 900px;
-    min-width: min(100vw, 500px);
-
-    width: 60vw;
 
     overflow-y: scroll;
 }
 
 .ContainerHashPost::-webkit-scrollbar {
     display: none;
+}
+
+.UserContainer{
+    grid-area: user;
+}
+
+.Geohash{
+    grid-area: hash;
 }

@@ -80,7 +80,7 @@ function User(props) {
     }
 
     return (
-        <form className='User'>
+        <form className='UserContainer'>
             <input className="button" id="name" type="text" placeholder="Name" value={name} onChange={e => setName(e.target.value)} disabled={!edit && !register}/>
             <input className="button" id="latInput" type="number" placeholder="Latitude" step="0.001" value={pos_x} onChange={e => setPosX(e.target.value)} disabled={!edit && !register}/>
             <input className="button" id="longInput" type="number" placeholder="Longitude" step="0.001" value={pos_y} onChange={e => setPosY(e.target.value)} disabled={!edit && !register}/>

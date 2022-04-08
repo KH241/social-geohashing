@@ -59,7 +59,6 @@
 
 .HashPostUser{
     grid-area: user;
-    justify-self: end;
     font-size: 1rem;
     font-weight: 900;
     padding-bottom: var(--spacing);
