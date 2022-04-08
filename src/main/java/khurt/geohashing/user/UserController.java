@@ -15,9 +15,16 @@ public class UserController {
                 .orElseThrow(() -> new UserNotFoundException(id));
     }
 
+    @GetMapping(ApiPaths.USERS + "/name/{name}")
+    public User getOneUser(@PathVariable String name) {
+        return repository.find(name);
+    }
+
     @PostMapping(ApiPaths.USERS)
-    public User newUser(@RequestBody User newUser){
-        return repository.save(newUser);
+    public User newUser(@RequestParam("name") String name,
+                        @RequestParam("pos_x") float pos_x,
+                        @RequestParam("pos_y") float pos_y){
+        return repository.save(new User(name, pos_x, pos_y));
     }
 
     @DeleteMapping(ApiPaths.USERS + "/{id}")
@@ -26,11 +33,14 @@ public class UserController {
     }
 
     @PutMapping(ApiPaths.USERS + "/{id}")
-    public User replaceUser(@RequestBody User newUser, @PathVariable Long id) throws UserNotFoundException {
+    public User replaceUser(@RequestParam("name") String name,
+                            @RequestParam("pos_x") float pos_x,
+                            @RequestParam("pos_y") float pos_y,
+                            @PathVariable Long id) throws UserNotFoundException {
         return repository.findById(id).map(user -> {
-            user.setName(newUser.getName());
-            user.setPos_x(newUser.getPos_x());
-            user.setPos_y(newUser.getPos_y());
+            user.setName(name);
+            user.setPos_x(pos_x);
+            user.setPos_y(pos_y);
             return repository.save(user);
         }).orElseThrow(() -> new UserNotFoundException(id));
     }

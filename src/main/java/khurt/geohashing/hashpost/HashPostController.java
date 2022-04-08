@@ -45,6 +45,7 @@ public class HashPostController {
                                              @RequestParam("text") String text,
                                              @RequestParam(value = "image", required = false) MultipartFile image){
 
+
         if (!g_repository.existsById(g_id)){ return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Not a valid Geohash");}
         if (!u_repository.existsById(u_id)){ return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("Not a valid User");}
 

@@ -23,10 +23,4 @@ public class GeohashController {
         repository.save(hash);
         return hash;
     }
-
-    //TODO remove
-    @GetMapping(ApiPaths.GEOHASH)
-    public List<Geohash> getAll() {
-        return repository.findAll();
-    }
 }
